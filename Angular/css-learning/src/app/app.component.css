@@ -2,7 +2,6 @@
     margin: 20px;
     display: grid;
     height: 800px;
-    width: 800px;
     /* grid-template-columns: 200px 2fr 20% 1fr; */
     grid-template-columns: [hd-start] repeat(4,[col-start] 20% [col-end]) [hd-end];
     /* grid-template-rows: 5rem 2.5rem; */
@@ -13,28 +12,31 @@
     /* grid-gap: 10px 20px; */
     grid-gap: 10px;
     grid-template-areas: "header header header  header "
-                         "sideBar . main main"
+                         ". sideBar main main"
                         "footer footer footer footer";
-    
-                        
-
     /* justify-items: center; */
     /* justify-items: start; */
-    justify-items: stretch;    /* default behaviour */
     /* align-items: center; */
     /* align-items: start; */
     align-items: stretch;
-    justify-content: stretch;  /* align along with horizontal */
-    align-content: stretch; /* align along with vertical */
-
+    justify-items: stretch;    /* default behaviour */
 
 }   
 
+@media (max-width: 40rem) {
+    .container {
+        grid-template-columns: [hd-start] repeat(4,[col-start] 20% [col-end]) [hd-end];
+        grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(40px,60px) [row-2-end row-3-start] 150px [row-3-end row-4-start] 100px [row-4-end];
+        grid-template-areas: "header header header  header "
+                             "main main main main"
+                             "sideBar sideBar sideBar sideBar"
+                             "footer footer footer footer";
+    }
+}
+
 .el1 {
     background: rgba(255, 154, 72, 0.5);
-    grid-area: main;
-    justify-self: center;
-    align-self: center;
+    grid-area: sideBar;
 }
 
 .el2 {
@@ -44,7 +46,7 @@
     /* grid-column: 1 / -1; */
     /* grid-row-start: row-2-start;
     grid-row-end: span 1; */
-    grid-column: col-start 2/ col-end 2;
+    grid-area: main
 }
 
 .el3 {
@@ -53,7 +55,7 @@
     grid-column-end: span 3; 
     grid-row-start: row-1-start; 
     grid-row-end: row-2-end;  */
-    grid-area: hd
+    grid-area: header
 }
 
 .el4 {
