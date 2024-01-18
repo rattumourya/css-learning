@@ -12,7 +12,19 @@
     grid-gap: 10px;
     grid-template-areas: "header header header  header "
                          "sideBar . main main"
-                        "footer footer footer footer"
+                        "footer footer footer footer";
+    
+                        
+
+    /* justify-items: center; */
+    /* justify-items: start; */
+    justify-items: stretch;    /* default behaviour */
+    /* align-items: center; */
+    /* align-items: start; */
+    align-items: stretch;
+
+
+
 }   
 
 .el1 {
