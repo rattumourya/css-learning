@@ -24,8 +24,8 @@
     /* align-items: center; */
     /* align-items: start; */
     align-items: stretch;
-    justify-content: center;  /* align along with horizontal */
-    align-content: center; /* align along with vertical */
+    justify-content: stretch;  /* align along with horizontal */
+    align-content: stretch; /* align along with vertical */
 
 
 }   
@@ -33,6 +33,8 @@
 .el1 {
     background: rgba(255, 154, 72, 0.5);
     grid-area: main;
+    justify-self: center;
+    align-self: center;
 }
 
 .el2 {
