@@ -2,12 +2,14 @@
   margin: 20px;
   display: grid;
   /* grid-template-columns: repeat(auto-fill,15rem); */
-  grid-template-columns: repeat(auto-fit,15rem);
+  /* grid-template-columns: repeat(auto-fit,15rem); */
+  grid-template-columns: repeat(3,15rem);
+
   grid-template-rows: 25rem;   /* explicitly adding height of first row remaining row will take auto width  */
   justify-content: center;
   grid-gap: 1.5rem;
   grid-auto-rows: minmax(8rem,auto);
-  grid-auto-flow: row;
+  grid-auto-flow: row dense;
   /* grid-auto-flow: column; */
 
 }
@@ -23,5 +25,9 @@ border-radius: 5px;
 .quote--featured {
 border: #ff4213;
 background: #ff9f87;
+grid-column: span 2;
+}
+
+.quote:nth-child(2) {
 grid-column: span 2;
 }
