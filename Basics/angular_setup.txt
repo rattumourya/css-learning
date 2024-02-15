@@ -1,0 +1,2 @@
+adding cli locally: npm i @angular/cli
+adding cli globally : npm install -g @angular/cli
