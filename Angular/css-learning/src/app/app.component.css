@@ -1,0 +1,64 @@
+.container {
+    margin: 20px;
+    display: grid;
+    height: 800px;
+    /* grid-template-columns: 200px 2fr 20% 1fr; */
+    grid-template-columns: [hd-start] repeat(4,[col-start] 20% [col-end]) [hd-end];
+    /* grid-template-rows: 5rem 2.5rem; */
+    /* grid-template-rows: 5rem auto; */
+    grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(40px,60px) [row-2-end row-3-start] 100px [row-3-end];
+    /* grid-column-gap: 20px;
+    grid-row-gap: 10px; */
+    /* grid-gap: 10px 20px; */
+    grid-gap: 10px;
+    grid-template-areas: "header header header  header "
+                         ". sideBar main main"
+                        "footer footer footer footer";
+    /* justify-items: center; */
+    /* justify-items: start; */
+    /* align-items: center; */
+    /* align-items: start; */
+    align-items: stretch;
+    justify-items: stretch;    /* default behaviour */
+
+}   
+
+@media (max-width: 40rem) {
+    .container {
+        grid-template-columns: [hd-start] repeat(4,[col-start] 20% [col-end]) [hd-end];
+        grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(40px,60px) [row-2-end row-3-start] 150px [row-3-end row-4-start] 100px [row-4-end];
+        grid-template-areas: "header header header  header "
+                             "main main main main"
+                             "sideBar sideBar sideBar sideBar"
+                             "footer footer footer footer";
+    }
+}
+
+.el1 {
+    background: rgba(255, 154, 72, 0.5);
+    grid-area: sideBar;
+}
+
+.el2 {
+    background: rgba(255, 0, 0, 0.5);
+    /* grid-column-start: 1;
+    grid-column-end: -1; */
+    /* grid-column: 1 / -1; */
+    /* grid-row-start: row-2-start;
+    grid-row-end: span 1; */
+    grid-area: main
+}
+
+.el3 {
+    background: rgba(0, 128, 0, 0.5);
+    /* grid-column-start: 2; 
+    grid-column-end: span 3; 
+    grid-row-start: row-1-start; 
+    grid-row-end: row-2-end;  */
+    grid-area: header
+}
+
+.el4 {
+    background: rgba(0, 4, 255, 0.5);
+    grid-area: footer;
+}
